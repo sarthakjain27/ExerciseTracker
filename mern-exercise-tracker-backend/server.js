@@ -1,3 +1,7 @@
+/*
+Working with express framework. Express provides robust set of features for web application. Express framework looks for
+specific method call and specific variables
+*/
 const express=require('express');
 const cors=require('cors');
 const mongoose=require('mongoose'); //mongoose will help in connecting to MongoDB Database
@@ -9,6 +13,7 @@ require('dotenv').config();
 
 /*
 Below two lines sets port to create a server
+express() makes an instance of the application server and we are assigning it to app
 */
 const app=express();
 const port=process.env.PORT;
