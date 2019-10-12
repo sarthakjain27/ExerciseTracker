@@ -5,6 +5,8 @@ const Exercise=require('../models/exercise.model')
 Router in express will help us to route any requests that comes to /root_url/exercises/
 to this get function
 GET
+
+(req,res) objects that express knows about
 */
 router.route('/').get((req,res)=>{
     Exercise.find()
