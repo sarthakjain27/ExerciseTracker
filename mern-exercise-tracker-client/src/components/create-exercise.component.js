@@ -27,6 +27,7 @@ class CreateExercise extends React.Component{
             description:'',
             duration:0,
             date:new Date(),
+            base:'https://exercisetrackingbackend.appspot.com/',
             users:[] //we are using an array of users corresponding to users in our MongoDB
             //this will help us in assigning an exercise to a user, which we are going to provide as a dropdown
             //of all present users in our db
@@ -48,7 +49,7 @@ class CreateExercise extends React.Component{
     */
     componentDidMount(){
 
-        axios.get('http://localhost:5000/users/').then((response)=>{
+        axios.get(this.state.base+'users/').then((response)=>{
 
             //response.data returns an array of objects containing our documents in the database
             if(response.data.length > 0)
@@ -120,7 +121,7 @@ class CreateExercise extends React.Component{
         //right now just console logging the exercise details user has entered.
         console.log(newExercise);
         
-        axios.post('http://localhost:5000/exercises/add',newExercise).then((res)=>{
+        axios.post(this.state.base+'exercises/add',newExercise).then((res)=>{
             console.log(res.data);
             //redirecting user to homepage after submit of the form
             window.location="/";

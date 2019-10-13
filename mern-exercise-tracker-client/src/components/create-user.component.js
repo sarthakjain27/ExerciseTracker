@@ -10,7 +10,7 @@ class CreateUser extends React.Component{
         super(props);
         this.state={
             username:'',
-            
+            base:'https://exercisetrackingbackend.appspot.com/'
         }
         this.onChangeUsername=this.onChangeUsername.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
@@ -36,7 +36,7 @@ class CreateUser extends React.Component{
 
         //endpoint is expecting a json object in the request body, so passing a new object as second parameter
         //of axios.post
-        axios.post('http://localhost:5000/users/add',newUser).then((res)=>{
+        axios.post(this.state.base+'users/add',newUser).then((res)=>{
             console.log(res.data)
         })
 

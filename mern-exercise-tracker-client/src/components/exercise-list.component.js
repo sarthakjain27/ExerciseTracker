@@ -8,6 +8,7 @@ class ExerciseList extends React.Component{
         super(props);
         console.log('const')
         this.state={
+            base:'https://exercisetrackingbackend.appspot.com/',
             exercises:[]
         }
         this.deleteExercise=this.deleteExercise.bind(this);
@@ -15,7 +16,7 @@ class ExerciseList extends React.Component{
 
     componentDidMount(){
         console.log('com did m')
-        axios.get('http://localhost:5000/exercises/').then((response)=>{
+        axios.get(this.state.base+'exercises/').then((response)=>{
             this.setState({
                 exercises:response.data
             })
@@ -24,7 +25,7 @@ class ExerciseList extends React.Component{
 
     deleteExercise(id)
     {
-        axios.delete('http://localhost:5000/exercises/'+id).then((response)=>{
+        axios.delete(this.state.base+'exercises/'+id).then((response)=>{
             console.log(response.data);
         }).catch(err=>console.log("Error: "+err));
 
