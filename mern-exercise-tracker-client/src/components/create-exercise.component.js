@@ -30,7 +30,6 @@ class CreateExercise extends React.Component{
             duration:0,
             date:new Date(),
             base:server_base_url,
-            //base:'https://exercisetrackingbackend.appspot.com/',
             users:[] //we are using an array of users corresponding to users in our MongoDB
             //this will help us in assigning an exercise to a user, which we are going to provide as a dropdown
             //of all present users in our db
