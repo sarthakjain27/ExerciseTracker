@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Exercise from './Exercise'
+import server_base_url from './config'
 
 
 class ExerciseList extends React.Component{
@@ -8,7 +9,7 @@ class ExerciseList extends React.Component{
         super(props);
         console.log('const')
         this.state={
-            base:'https://exercisetrackingbackend.appspot.com/',
+            base:server_base_url,
             exercises:[]
         }
         this.deleteExercise=this.deleteExercise.bind(this);

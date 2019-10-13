@@ -12,6 +12,8 @@ The below two datepicker class will help us in providing a calendar input for th
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
 
+import server_base_url from './config'
+
 
 class CreateExercise extends React.Component{
     
@@ -27,7 +29,8 @@ class CreateExercise extends React.Component{
             description:'',
             duration:0,
             date:new Date(),
-            base:'https://exercisetrackingbackend.appspot.com/',
+            base:server_base_url,
+            //base:'https://exercisetrackingbackend.appspot.com/',
             users:[] //we are using an array of users corresponding to users in our MongoDB
             //this will help us in assigning an exercise to a user, which we are going to provide as a dropdown
             //of all present users in our db

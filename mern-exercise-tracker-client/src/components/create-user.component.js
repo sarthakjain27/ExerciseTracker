@@ -2,6 +2,7 @@ import React from 'react';
 
 //to send http requests from frontend to backend api via axios
 import axios from 'axios'
+import server_base_url from './config'
 
 class CreateUser extends React.Component{
 
@@ -10,7 +11,7 @@ class CreateUser extends React.Component{
         super(props);
         this.state={
             username:'',
-            base:'https://exercisetrackingbackend.appspot.com/'
+            base:server_base_url,
         }
         this.onChangeUsername=this.onChangeUsername.bind(this);
         this.onSubmit=this.onSubmit.bind(this);

@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route,Switch,Redirect} from 'react-router-dom';
 
 import Navbar from './components/navbar.component'
 import ExerciseList from './components/exercise-list.component'
@@ -17,15 +17,19 @@ function App() {
   /*
   We are going to put a router element for each route in the application
   */
+  const NotFoundRedirect = () => <Redirect to='/' />
   return (
     <Router>
       <div className="container">
         <Navbar />
         <br/>
-        <Route path='/' exact component={ExerciseList}/>
-        <Route path='/edit/:id' exact component={EditExercise}/>
-        <Route path='/create' exact component={CreateExercise}/>
-        <Route path='/user' exact component={CreateUser}/>
+        <Switch>
+          <Route path='/' exact component={ExerciseList}/>
+          <Route path='/edit/:id' exact component={EditExercise}/>
+          <Route path='/create' exact component={CreateExercise}/>
+          <Route path='/user' exact component={CreateUser}/>
+          <Route component={NotFoundRedirect} />
+        </Switch>
       </div>
     </Router>
   );
