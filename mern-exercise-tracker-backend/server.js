@@ -5,6 +5,7 @@ specific method call and specific variables
 const express=require('express');
 const cors=require('cors');
 const mongoose=require('mongoose'); //mongoose will help in connecting to MongoDB Database
+const path = require('path');
 
 /*
 This line configures, so that we can have our env variables in dotenv file
@@ -45,7 +46,6 @@ exercisesRouter will get called and similarly for usersRouter
 */
 app.use('/exercises',exercisesRouter);
 app.use('/users',usersRouter);
-
 
 app.listen(port,()=>{
     console.log(`The server has started and is listening on ${port}`);
