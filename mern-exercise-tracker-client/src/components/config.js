@@ -1,3 +1,3 @@
-const server_base_url="http://localhost:5000/"
+const server_base_url="https://exercisewebappbackend.appspot.com/"
 
 export default server_base_url
