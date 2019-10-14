@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import server_base_url from './config'
 import axios from 'axios'
 
@@ -42,33 +42,45 @@ class DeleteUser extends React.Component{
         console.log(e.target.value)
 
         this.setState({
-            username:e.target.value
-        },()=>{
+            username:e.target.value,
             usernameid:this.state.users.find((user)=>{
-                if(user.username===this.state.username)
-                    return user._id;
-            })
-        });
+                return user.username===e.target.value
+            })._id
+        },()=>{
+            console.log(this.state);
+        });        
     }
 
     onSubmit(e)
     {
         e.preventDefault();
 
+        console.log(" Inside Submit");
+        console.log(this.state.usernameid);
+
         axios.delete(this.state.base+'users/'+this.state.usernameid).then((response)=>{
             console.log(response.data);
-            alert(+" user deleted");
+            alert(response.data.username+" user deleted");
         }).catch(err=>console.log("Error: "+err));
 
         this.setState({
             users:this.state.users.filter((each)=>{
                 return each._id!==this.state.usernameid;
-            })
+            }),
         },()=>{
-            this.setState({
-                username:this.state.users[0].username,
-                usernameid:this.state.users[0]._id
-            })
+            if(this.state.users.length>0)
+            {
+                this.setState({
+                    username:this.state.users[0].username,
+                    usernameid:this.state.users[0]._id
+                })
+            }
+            else{
+                this.setState({
+                    username:'',
+                    usernameid:''
+                })
+            }
         })
     }
 
