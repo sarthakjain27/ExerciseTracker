@@ -6,7 +6,7 @@ The backend and frontend codes are present in their respective folders.
 
 Follow the steps to set up the application.
 
-1. cd into the backend folder and do npm install and npm client-install. It will install dependencies for both backend and frontend.
+1. cd into the backend folder and do npm install and npm client-install. It will install dependencies for both backend and frontend (not required if application being deployed on Google App Engine).
 
 2. Set up a cluster in Atlas or AWS and provide the connection string in the .env file in backend folder. 
 
