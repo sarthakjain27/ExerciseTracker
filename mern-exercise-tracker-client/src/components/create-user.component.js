@@ -3,6 +3,7 @@ import React from 'react';
 //to send http requests from frontend to backend api via axios
 import axios from 'axios'
 import server_base_url from './config'
+import {Alert} from 'reactstrap'
 
 class CreateUser extends React.Component{
 
@@ -11,7 +12,7 @@ class CreateUser extends React.Component{
         super(props);
         this.state={
             username:'',
-            base:server_base_url,
+            base:server_base_url
         }
         this.onChangeUsername=this.onChangeUsername.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
@@ -39,6 +40,9 @@ class CreateUser extends React.Component{
         //of axios.post
         axios.post(this.state.base+'users/add',newUser).then((res)=>{
             console.log(res.data)
+            alert("Added person with username: "+newUser.username);
+        }).catch((err)=>{
+            alert("Duplicate Name Entered. Please enter a unique username");
         })
 
         //We can send the user to homepage by uncommenting below line. Here we are giving option to add multiple

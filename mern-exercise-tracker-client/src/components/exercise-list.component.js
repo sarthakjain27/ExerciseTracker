@@ -16,7 +16,6 @@ class ExerciseList extends React.Component{
     }
 
     componentDidMount(){
-        console.log('com did m')
         axios.get(this.state.base+'exercises/').then((response)=>{
             this.setState({
                 exercises:response.data

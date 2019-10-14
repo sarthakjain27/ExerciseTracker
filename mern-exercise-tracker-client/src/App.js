@@ -7,6 +7,7 @@ import ExerciseList from './components/exercise-list.component'
 import EditExercise from './components/edit-exercise.component'
 import CreateExercise from './components/create-exercise.component'
 import CreateUser from './components/create-user.component'
+import DeleteUser from './components/delete-user.component'
 
 //We have to put everything we want to be used with the router inside the <Router></Router>
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/edit/:id' exact component={EditExercise}/>
           <Route path='/create' exact component={CreateExercise}/>
           <Route path='/user' exact component={CreateUser}/>
+          <Route path='/deleteUser' exact component={DeleteUser}/>
           <Route component={NotFoundRedirect} />
         </Switch>
       </div>

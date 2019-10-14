@@ -41,9 +41,10 @@ router.route('/:id').get((req,res)=>{
 
 //DELETE a user with id parameter passed in url
 router.route('/:id').delete((req,res)=>{
+    console.log(req.params.id);
     User.findByIdAndDelete(req.params.id)
     .then((user)=>{
-        res.json('User deleted: '+user);
+        res.json(user);
     }).catch((err)=>{
         res.status(400).json('Error in deleting the user: '+err);
     })

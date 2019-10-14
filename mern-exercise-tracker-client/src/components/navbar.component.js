@@ -16,6 +16,9 @@ class Navbar extends React.Component{
                         <li className="navbar-item">
                             <Link to="/user" className="nav-link">Create User</Link>
                         </li>
+                        <li className="navbar-item">
+                            <Link to="/deleteUser" className="nav-link">Delete User</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>
