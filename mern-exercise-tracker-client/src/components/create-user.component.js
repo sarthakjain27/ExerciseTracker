@@ -3,7 +3,6 @@ import React from 'react';
 //to send http requests from frontend to backend api via axios
 import axios from 'axios'
 import server_base_url from './config'
-import {Alert} from 'reactstrap'
 
 class CreateUser extends React.Component{
 
